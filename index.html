@@ -576,5 +576,54 @@
             revealElements.forEach(el => observer.observe(el));
         });
     </script>
+    <script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const submitBtn = document.getElementById('submitBtn') || this.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Processing Booking...';
+
+  // Matches your HTML form input IDs
+  const templateParams = {
+    user_name: document.getElementById('nameInput').value,
+    user_email: document.getElementById('emailInput').value,
+    user_phone: document.getElementById('phoneInput').value,
+    service_name: document.getElementById('serviceSelect').value,
+    barber_name: document.getElementById('barberSelect').value,
+    booking_date: document.getElementById('dateInput').value,
+    booking_time: document.getElementById('timeSelect').value
+  };
+
+  // 1. Send notification email to YOU
+  emailjs.send('service_wss4axo', 'template_c99s6bq', templateParams)
+    .then(function() {
+      // 2. Send confirmation auto-reply to CLIENT
+      return emailjs.send('service_wss4axo', 'template_2i7fafj', templateParams);
+    })
+    .then(function() {
+      // Hide form & show success UI if available, or reset form
+      const bookingForm = document.getElementById('bookingForm');
+      const bookingSuccess = document.getElementById('bookingSuccess');
+      
+      if (bookingSuccess) {
+        bookingForm.classList.add('hidden');
+        bookingSuccess.classList.remove('hidden');
+      } else {
+        alert('Reservation successful! A confirmation email has been sent to your address.');
+        if (typeof closeBookingModal === 'function') closeBookingModal();
+        bookingForm.reset();
+      }
+    })
+    .catch(function(error) {
+      alert('Failed to send reservation. Please check your details or call us directly.');
+      console.error('EmailJS Error:', error);
+    })
+    .finally(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Confirm Reservation';
+    });
+});
+</script>
 </body>
 </html>
