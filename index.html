@@ -49,55 +49,14 @@
         .hover-lift:hover {
             transform: translateY(-4px);
         }
-        <!-- Place before </head> -->
+        </style>
+     <!-- EmailJS Library -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script type="text/javascript">
    (function(){
-      emailjs.init("K0TFiUyU9mo-Zg6Ak"); // Replace with Public Key from Step 4
+      emailjs.init("K0TFiUyU9mo-Zg6Ak");
    })();
 </script>
-
-<!-- Replace your form submit JS code with this -->
-<script>
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const submitBtn = this.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Processing Booking...';
-
-  const templateParams = {
-    user_name: document.getElementById('bookName').value,
-    user_email: document.getElementById('bookEmail').value,
-    user_phone: document.getElementById('bookPhone').value,
-    service_name: document.getElementById('bookService').value,
-    barber_name: document.getElementById('bookBarber').value,
-    booking_date: document.getElementById('bookDate').value,
-    booking_time: document.getElementById('bookTime').value
-  };
-
-  // 1. Send notification email to YOU
-  emailjs.send('service_wss4axo', 'template_c99s6bq', templateParams)
-    .then(function() {
-      // 2. Send confirmation auto-reply to CLIENT
-      return emailjs.send('service_wss4axo', 'template_2i7fafj', templateParams);
-    })
-    .then(function() {
-      alert('Reservation successful! A confirmation email has been sent to your address.');
-      closeBookingModal();
-      document.getElementById('bookingForm').reset();
-    })
-    .catch(function(error) {
-      alert('Failed to send reservation. Please check details or call us directly.');
-      console.error('EmailJS Error:', error);
-    })
-    .finally(function() {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Confirm Booking';
-    });
-});
-</script>
-    </style>
 </head>
 <body class="bg-white text-dark font-sans antialiased selection:bg-dark selection:text-white">
 
