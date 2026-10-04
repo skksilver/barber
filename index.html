@@ -446,63 +446,68 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
             <h3 class="font-serif text-2xl font-bold mb-1">Book an Appointment</h3>
             <p class="text-xs text-gray-500 uppercase tracking-widest mb-6">Select your service and preferred time</p>
 
-            <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Service</label>
-                    <select id="serviceSelect" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none bg-white">
-                        <option value="Classic Fade">Classic Fade ($35)</option>
-                        <option value="Executive Combover">Executive Combover </option>
-                        <option value="Buzz Cut & Line Up">Buzz Cut & Line Up </option>
-                        <option value="Modern Quiff / Pompadour">Modern Quiff / Pompadour </option>
-                        <option value="Beard Sculpting">Beard Sculpting & Lineup </option>
-                        <option value="Hot Towel Shave">Buzz cut </option>
-                        <option value="The Signature Package">The Signature Package </option>
-                    </select>
-                </div>
+       <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+    <div>
+        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Service</label>
+        <select id="serviceSelect" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none bg-white">
+            <option value="Classic Fade">Classic Fade ($35)</option>
+            <option value="Executive Combover">Executive Combover</option>
+            <option value="Buzz Cut & Line Up">Buzz Cut & Line Up</option>
+            <option value="Modern Quiff / Pompadour">Modern Quiff / Pompadour</option>
+            <option value="Beard Sculpting">Beard Sculpting & Lineup</option>
+            <option value="Buzz cut">Buzz cut</option>
+            <option value="The Signature Package">The Signature Package</option>
+        </select>
+    </div>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Preferred Date</label>
-                        <input type="date" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Preferred Time</label>
-                        <select required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none bg-white">
-                            <option value="09:00 AM">09:00 AM</option>
-                            <option value="10:30 AM">10:30 AM</option>
-                            <option value="01:00 PM">01:00 PM</option>
-                            <option value="03:00 PM">03:00 PM</option>
-                            <option value="05:00 PM">05:00 PM</option>
-                            <option value="06:30 PM">06:30 PM</option>
-                        </select>
-                    </div>
-                </div>
+    <div class="grid grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Preferred Date</label>
+            <input type="date" id="dateInput" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
+        </div>
+        <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Preferred Time</label>
+            <select id="timeSelect" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none bg-white">
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="06:30 PM">06:30 PM</option>
+            </select>
+        </div>
+    </div>
 
-                <div>
-                    <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Preferred Barber</label>
-                    <select class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none bg-white">
-                        <option value="Any Available">Any Available Master Barber</option>
-                        <option value="Marcus">sanjay (Master Barber)</option>
-                        <option value="David">sanjay (Fade Specialist)</option>
-                        <option value="Elena">sanjay(Shave & Beard Specialist)</option>
-                    </select>
-                </div>
+    <div>
+        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Preferred Barber</label>
+        <select id="barberSelect" class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none bg-white">
+            <option value="Any Available">Any Available Master Barber</option>
+            <option value="sanjay (Master Barber)">sanjay (Master Barber)</option>
+            <option value="sanjay (Fade Specialist)">sanjay (Fade Specialist)</option>
+            <option value="sanjay (Shave & Beard Specialist)">sanjay (Shave & Beard Specialist)</option>
+        </select>
+    </div>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Full Name</label>
-                        <input type="text" placeholder="John Doe" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Phone Number</label>
-                        <input type="tel" placeholder="(555) 000-0000" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
-                    </div>
-                </div>
+    <div>
+        <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Full Name</label>
+        <input type="text" id="nameInput" placeholder="John Doe" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
+    </div>
 
-                <button type="submit" class="w-full bg-dark text-white border-2 border-dark py-3 mt-4 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-dark transition-colors">
-                    Confirm Reservation
-                </button>
-            </form>
+    <div class="grid grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Email Address</label>
+            <input type="email" id="emailInput" placeholder="john@example.com" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
+        </div>
+        <div>
+            <label class="block text-xs uppercase tracking-wider font-semibold mb-1">Phone Number</label>
+            <input type="tel" id="phoneInput" placeholder="(555) 000-0000" required class="w-full border border-midgray p-3 text-sm focus:border-dark outline-none">
+        </div>
+    </div>
+
+    <button type="submit" id="submitBtn" class="w-full bg-dark text-white border-2 border-dark py-3 mt-4 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-dark transition-colors">
+        Confirm Reservation
+    </button>
+</form>
 
             <div id="bookingSuccess" class="hidden text-center py-8">
                 <div class="w-12 h-12 bg-dark text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
