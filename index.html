@@ -340,98 +340,49 @@
      HEADER
 ========================================================= -->
 
-<header class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-midgray">
+</head>
+<body class="bg-white text-dark">
 
+    <!-- NAV HEADER WITH TRANSLUCENT BACKGROUND IMAGE -->
+    <header class="relative w-full border-b border-midgray bg-white overflow-hidden">
+        
+        <!-- 1. Translucent Background Image (Adjust opacity as needed) -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
+             style="background-image: url('https://raw.githubusercontent.com/skksilver/barber/main/IMG_5873.jpeg');">
+        </div>
 
-<div class="header-inner max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+        <!-- 2. Semi-Transparent Overlay for clean readability -->
+        <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] pointer-events-none"></div>
 
-    <a href="#home"
-       class="font-serif text-lg md:text-xl tracking-widest font-extrabold">
-        BinusHairSaloon
-    </a>
+        <!-- 3. Header Container with Logo & Navigation Tabs -->
+        <div class="header-inner relative z-10 max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Shop Name / Logo -->
+            <a href="#home" class="font-serif font-bold text-lg md:text-xl tracking-wider text-dark uppercase">
+                Binus Hair Saloon
+            </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-semibold">
+            <!-- Navigation Links / Tabs -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-dark">
+                <a href="#home" class="hover:opacity-60 transition-opacity">Home</a>
+                <a href="#services" class="hover:opacity-60 transition-opacity">Haircuts &amp; Services</a>
+                <a href="#access" class="hover:opacity-60 transition-opacity">Access &amp; Hours</a>
+                <a href="#book" onclick="openBookingModal()" class="border border-dark px-4 py-2 hover:bg-dark hover:text-white transition-colors">
+                    Book Now
+                </a>
+            </nav>
 
-        <a href="#home" class="hover:text-gray-500 transition-colors">
-            Home
-        </a>
+            <!-- Mobile Book Button (Visible on small screens) -->
+            <div class="md:hidden">
+                <button onclick="openBookingModal()" class="text-[10px] font-semibold uppercase tracking-widest border border-dark px-3 py-1.5 hover:bg-dark hover:text-white transition-colors">
+                    Book
+                </button>
+            </div>
 
-        <a href="#services" class="hover:text-gray-500 transition-colors">
-            Haircuts & Services
-        </a>
+        </div>
+    </header>
 
-        <a href="#access" class="hover:text-gray-500 transition-colors">
-            Access & Hours
-        </a>
-
-        <button
-            onclick="openBookingModal()"
-            class="border-2 border-dark px-5 py-2.5 bg-dark text-white hover:bg-white hover:text-dark transition-all">
-            Reservation
-        </button>
-
-    </nav>
-
-    <!-- Mobile Menu Button -->
-    <button
-        id="mobileMenuBtn"
-        class="md:hidden p-1.5"
-        aria-label="Toggle Navigation">
-
-        <svg class="w-5 h-5"
-             fill="none"
-             stroke="currentColor"
-             viewBox="0 0 24 24">
-
-            <path
-                id="menuIcon"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16">
-            </path>
-
-        </svg>
-
-    </button>
-
-</div>
-
-<!-- Mobile Menu -->
-<div id="mobileMenu"
-     class="hidden md:hidden bg-white border-b border-midgray px-5 py-4">
-
-    <div class="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-wider">
-
-        <a href="#home"
-           onclick="toggleMobileMenu()">
-            Home
-        </a>
-
-        <a href="#services"
-           onclick="toggleMobileMenu()">
-            Haircuts & Services
-        </a>
-
-        <a href="#access"
-           onclick="toggleMobileMenu()">
-            Access & Hours
-        </a>
-
-        <button
-            onclick="toggleMobileMenu(); openBookingModal();"
-            class="w-full border-2 border-dark py-2.5 bg-dark text-white">
-            Reservation
-        </button>
-
-    </div>
-
-</div>
-
-
-</header>
-
+    <!-- YOUR HERO SECTION AND REST OF PAGE GOES HERE -->
 <!-- =========================================================
      HERO
 ========================================================= -->
