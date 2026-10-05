@@ -1147,36 +1147,16 @@
 
         <!-- Barber -->
         <div>
-
-            <label class="block text-[9px] uppercase tracking-wider font-semibold mb-1">
-                Preferred Barber
-            </label>
-
-            <select
-                id="barberSelect"
-                class="w-full border border-midgray p-3 text-sm outline-none bg-white">
-
-                <option value="Any Available">
-                    Any Available Master Barber
-                </option>
-
-                <option value="sanjay (Master Barber)">
-                    Sanjay (Master Barber)
-                </option>
-
-                <option value="sanjay (Fade Specialist)">
-                    Sanjay (Fade Specialist)
-                </option>
-
-                <option value="sanjay (Shave & Beard Specialist)">
-                    Sanjay (Shave & Beard Specialist)
-                </option>
-
-            </select>
-
-        </div>
-
-
+    <label class="block text-xs font-semibold uppercase tracking-wider mb-2 text-dark">
+        Preferred Stylist
+    </label>
+    <select id="bookingStaff" name="staff_name" required class="w-full border border-midgray p-3 text-xs bg-white text-dark focus:outline-none focus:border-dark">
+        <option value="Any Available Stylist">Any Available Stylist</option>
+        <option value="Alex Mercer">Alex Mercer (Lead Barber)</option>
+        <option value="Kenji Takahashi">Kenji Takahashi (Perm &amp; Color)</option>
+        <option value="David Vance">David Vance (Senior Barber)</option>
+    </select>
+</div>
         <!-- Name -->
         <div>
 
@@ -1641,6 +1621,22 @@
 
         });
 
+</script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedStaff = urlParams.get("staff");
+
+        if (selectedStaff) {
+            const staffSelect = document.getElementById("bookingStaff");
+            if (staffSelect) {
+                staffSelect.value = selectedStaff;
+            }
+            if (typeof openBookingModal === "function") {
+                openBookingModal();
+            }
+        }
+    });
 </script>
 
 </body>
