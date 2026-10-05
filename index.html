@@ -343,45 +343,43 @@
 </head>
 <body class="bg-white text-dark">
 
-    <!-- NAV HEADER WITH TRANSLUCENT BACKGROUND IMAGE -->
-    <header class="relative w-full border-b border-midgray bg-white overflow-hidden">
+  <!-- HEADER SECTION -->
+<header class="relative w-full border-b border-midgray bg-white overflow-hidden z-50">
+    <!-- 1. Translucent Background Image -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
+         style="background-image: url('https://raw.githubusercontent.com/skksilver/barber/main/IMG_5873.jpeg');">
+    </div>
+
+    <!-- 2. Semi-Transparent White Overlay -->
+    <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] pointer-events-none"></div>
+
+    <!-- 3. Header Navigation Items -->
+    <div class="header-inner relative z-10 max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         
-        <!-- 1. Translucent Background Image (Adjust opacity as needed) -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
-             style="background-image: url('https://raw.githubusercontent.com/skksilver/barber/main/IMG_5873.jpeg');">
-        </div>
+        <!-- Shop Name / Logo -->
+        <a href="#home" class="font-serif font-bold text-lg md:text-xl tracking-wider text-dark uppercase">
+            Binus Hair Saloon
+        </a>
 
-        <!-- 2. Semi-Transparent Overlay for clean readability -->
-        <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] pointer-events-none"></div>
-
-        <!-- 3. Header Container with Logo & Navigation Tabs -->
-        <div class="header-inner relative z-10 max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-            
-            <!-- Shop Name / Logo -->
-            <a href="#home" class="font-serif font-bold text-lg md:text-xl tracking-wider text-dark uppercase">
-                Binus Hair Saloon
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-dark">
+            <a href="#home" class="hover:opacity-60 transition-opacity">Home</a>
+            <a href="#services" class="hover:opacity-60 transition-opacity">Haircuts &amp; Services</a>
+            <a href="#access" class="hover:opacity-60 transition-opacity">Access &amp; Hours</a>
+            <a href="#book" onclick="openBookingModal()" class="border border-dark px-4 py-2 hover:bg-dark hover:text-white transition-colors">
+                Book Now
             </a>
+        </nav>
 
-            <!-- Navigation Links / Tabs -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-dark">
-                <a href="#home" class="hover:opacity-60 transition-opacity">Home</a>
-                <a href="#services" class="hover:opacity-60 transition-opacity">Haircuts &amp; Services</a>
-                <a href="#access" class="hover:opacity-60 transition-opacity">Access &amp; Hours</a>
-                <a href="#book" onclick="openBookingModal()" class="border border-dark px-4 py-2 hover:bg-dark hover:text-white transition-colors">
-                    Book Now
-                </a>
-            </nav>
-
-            <!-- Mobile Book Button (Visible on small screens) -->
-            <div class="md:hidden">
-                <button onclick="openBookingModal()" class="text-[10px] font-semibold uppercase tracking-widest border border-dark px-3 py-1.5 hover:bg-dark hover:text-white transition-colors">
-                    Book
-                </button>
-            </div>
-
+        <!-- Mobile Book Button -->
+        <div class="md:hidden">
+            <button onclick="openBookingModal()" class="text-[10px] font-semibold uppercase tracking-widest border border-dark px-3 py-1.5 hover:bg-dark hover:text-white transition-colors">
+                Book
+            </button>
         </div>
-    </header>
 
+    </div>
+</header>
     <!-- YOUR HERO SECTION AND REST OF PAGE GOES HERE -->
 <!-- =========================================================
      HERO
