@@ -1624,20 +1624,26 @@
 
         });
 
-</script>
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
         const selectedStaff = urlParams.get("staff");
 
+        // ONLY pre-select the staff dropdown if 'staff' is in the URL
         if (selectedStaff) {
             const staffSelect = document.getElementById("bookingStaff");
             if (staffSelect) {
-                staffSelect.value = selectedStaff;
+                // Decode URL characters (e.g., %20 to space)
+                staffSelect.value = decodeURIComponent(selectedStaff);
             }
+            
+            // Open modal ONLY when coming directly from staff booking link
             if (typeof openBookingModal === "function") {
                 openBookingModal();
             }
+
+            // Clean up the URL query parameters without reloading the page
+            window.history.replaceState({}, document.title, window.location.pathname);
         }
     });
 </script>
