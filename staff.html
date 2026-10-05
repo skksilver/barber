@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Staff | Binus Hair Saloon</title>
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/skksilver/barber/main/IMG_5873.jpeg">
+
+    <!-- Tailwind CSS & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        dark: '#111111',
+                        charcoal: '#1A1A1A',
+                        lightgray: '#F9F9F9',
+                        midgray: '#E5E5E5',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-white text-dark font-sans antialiased">
+
+    <!-- HEADER NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-dark/90 backdrop-blur-md text-white border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-lg md:text-xl tracking-widest font-extrabold uppercase">
+                Binus Hair Saloon
+            </a>
+            <nav class="flex items-center space-x-6 text-xs uppercase tracking-widest font-semibold">
+                <a href="index.html#home" class="hover:text-gray-400 transition-colors">Home</a>
+                <a href="index.html#services" class="hover:text-gray-400 transition-colors">Services</a>
+                <a href="staff.html" class="text-white border-b border-white pb-0.5">Staff</a>
+                <a href="index.html#access" class="hover:text-gray-400 transition-colors">Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO / TITLE SECTION -->
+    <section class="pt-32 pb-12 bg-dark text-white text-center px-4">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-2">Craftsmanship &amp; Expertise</p>
+            <h1 class="font-serif text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4">Meet Our Master Stylists</h1>
+            <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto font-light">
+                Select your preferred barber or hair specialist to book a personalized styling experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- STAFF GRID SECTION -->
+    <section class="py-16 max-w-7xl mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- STAFF MEMBER 1 -->
+            <div class="border border-midgray p-5 bg-white flex flex-col justify-between hover:shadow-lg transition-shadow">
+                <div>
+                    <div class="w-full h-80 overflow-hidden mb-5 bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
+                             alt="Master Stylist" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest bg-dark text-white px-2.5 py-1 inline-block mb-3">
+                        Lead Barber
+                    </span>
+                    <h3 class="font-serif text-xl font-bold uppercase mb-1">Alex Mercer</h3>
+                    <p class="text-xs text-gray-500 font-medium mb-3">10+ Years Experience</p>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                        Specializes in precision skin fades, classical razor shaves, and textured pompadour cuts.
+                    </p>
+                </div>
+                <a href="index.html?staff=Alex%20Mercer#book" 
+                   class="w-full block text-center border-2 border-dark bg-dark text-white text-xs font-semibold uppercase tracking-widest py-3 hover:bg-white hover:text-dark transition-all">
+                    Book With Alex
+                </a>
+            </div>
+
+            <!-- STAFF MEMBER 2 -->
+            <div class="border border-midgray p-5 bg-white flex flex-col justify-between hover:shadow-lg transition-shadow">
+                <div>
+                    <div class="w-full h-80 overflow-hidden mb-5 bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
+                             alt="Hair Specialist" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest bg-dark text-white px-2.5 py-1 inline-block mb-3">
+                        Color &amp; Perm Specialist
+                    </span>
+                    <h3 class="font-serif text-xl font-bold uppercase mb-1">Kenji Takahashi</h3>
+                    <p class="text-xs text-gray-500 font-medium mb-3">7 Years Experience</p>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                        Expert in modern Japanese perms, balayage highlights, and smooth styling treatments.
+                    </p>
+                </div>
+                <a href="index.html?staff=Kenji%20Takahashi#book" 
+                   class="w-full block text-center border-2 border-dark bg-dark text-white text-xs font-semibold uppercase tracking-widest py-3 hover:bg-white hover:text-dark transition-all">
+                    Book With Kenji
+                </a>
+            </div>
+
+            <!-- STAFF MEMBER 3 -->
+            <div class="border border-midgray p-5 bg-white flex flex-col justify-between hover:shadow-lg transition-shadow">
+                <div>
+                    <div class="w-full h-80 overflow-hidden mb-5 bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" 
+                             alt="Senior Barber" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest bg-dark text-white px-2.5 py-1 inline-block mb-3">
+                        Senior Barber
+                    </span>
+                    <h3 class="font-serif text-xl font-bold uppercase mb-1">David Vance</h3>
+                    <p class="text-xs text-gray-500 font-medium mb-3">8 Years Experience</p>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                        Focuses on modern taper fades, beard grooming, hot towel treatments, and custom hair art.
+                    </p>
+                </div>
+                <a href="index.html?staff=David%20Vance#book" 
+                   class="w-full block text-center border-2 border-dark bg-dark text-white text-xs font-semibold uppercase tracking-widest py-3 hover:bg-white hover:text-dark transition-all">
+                    Book With David
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-8 text-center text-xs text-gray-500 border-t border-white/10">
+        <p>&copy; Binus Hair Saloon. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
